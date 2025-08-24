@@ -4,7 +4,13 @@ void main(){
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(title: Text("Hello flutter")),
-      body: const MyApp()
+      body: Column(
+        children: const[
+          MyApp(),
+          MyButton(),
+          MyText()
+        ],
+      )
       ),
     ),
   );
@@ -17,9 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: Container(
+          margin: const EdgeInsets.fromLTRB(0, 60, 0, 0),
           alignment: Alignment.center, // 配置Container容器元素的方位
           width: 200,
           height: 200,
+          // transform:  Matrix4.translationValues(40, 0, 0), // 位移
+          // transform: Matrix4.rotationZ(0.2), //旋轉
+          // transform: Matrix4.skewY(0.2), // 沿著 Y 軸傾斜 0.2 弧度
           decoration: BoxDecoration(
             color: Colors.yellow, // 背景顏色
             border: Border.all( // 邊框
@@ -45,5 +55,62 @@ class MyApp extends StatelessWidget {
           ),),
         ),
       );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  const MyButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+      alignment: Alignment.center,
+      width: 200,
+      height: 40,
+      // margin: const EdgeInsets.all(10), // 四周margin
+      margin: const EdgeInsets.fromLTRB(0, 40, 0, 0), // 指定margin (和外面元素的距離)
+      // padding: const EdgeInsets.fromLTRB(40, 10, 0, 0), // 指定padding (和裡面元素的距離)
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: const Text("Button", style: TextStyle(
+        color: Colors.white,
+        fontSize: 16,
+      ),),
+    );
+  }
+}
+
+class MyText extends StatelessWidget {
+  const MyText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200,
+      height: 200,
+      margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+      decoration: const BoxDecoration(
+        color: Colors.yellow,
+      ),
+      child: Text(
+        "你好我是Flutter你好我是Flutter你好我是Flutter你好我是Flutter你好我是Flutter", 
+        textAlign: TextAlign.left,
+        overflow: TextOverflow.ellipsis, // 溢出顯示幾個點
+        maxLines: 1,
+        style: TextStyle(
+          color: Colors.blue,
+          fontSize: 20,
+          fontWeight: FontWeight.w900,
+          fontStyle: FontStyle.italic,
+          letterSpacing: 2,
+          decoration: TextDecoration.underline,
+          decorationColor: Colors.black,
+          decorationStyle: TextDecorationStyle.dashed
+        ),
+      ),
+    );
   }
 }
