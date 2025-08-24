@@ -9,6 +9,7 @@ void main(){
   ));
 }
 
+// Shortcut:stless
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -22,6 +23,5 @@ class MyApp extends StatelessWidget {
             color: Colors.red,
             fontSize: 40.0)),
       );
-
   }
 }
