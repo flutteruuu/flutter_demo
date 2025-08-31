@@ -8,7 +8,8 @@ void main(){
         children: const[
           MyApp(),
           MyButton(),
-          MyText()
+          MyText(),
+          MyPicture(),
         ],
       )
       ),
@@ -114,3 +115,31 @@ class MyText extends StatelessWidget {
     );
   }
 }
+
+class MyPicture extends StatelessWidget {
+  const MyPicture({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        margin: const EdgeInsets.fromLTRB(0, 40, 0, 0), // 指定margin (和外面元素的距離)
+        width: 150,
+        height: 300,
+        decoration: const BoxDecoration(
+          color: Colors.yellow
+        ), 
+        child: Image.network(
+          "https://www.itying.com/themes/itying/images/ionic4.png",
+          // 
+          // https://miro.medium.com/v2/resize:fit:2000/format:webp/1*KLn6ye1qAU9vAI3zgIhLCg.png
+          // alignment: Alignment.centerLeft,
+          // scale: 3,
+          // fit:BoxFit.cover,
+          // repeat: ImageRepeat.repeat,
+          ),
+      ),
+    );
+  }
+}
+
