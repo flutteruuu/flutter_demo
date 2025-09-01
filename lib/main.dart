@@ -12,6 +12,8 @@ void main(){
           MyPicture(),
           SizedBox(height: 20,), // 添加間距
           Circular(),
+          SizedBox(height: 20,), // 添加間距
+          ClipImage()
         ],
       )
       ),
@@ -165,3 +167,27 @@ class Circular extends StatelessWidget {
     );
   }
 }
+
+// 實現一個圓形圖片 使用ClipOval
+class ClipImage extends StatelessWidget {
+  const ClipImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const ClipOval(
+      child: Image(
+        image: NetworkImage("https://www.itying.com/themes/itying/images/ionic4.png"),
+        width: 150,
+        height: 150,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
