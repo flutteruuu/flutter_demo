@@ -10,6 +10,8 @@ void main(){
           MyButton(),
           MyText(),
           MyPicture(),
+          SizedBox(height: 20,), // 添加間距
+          Circular(),
         ],
       )
       ),
@@ -92,7 +94,7 @@ class MyText extends StatelessWidget {
     return Container(
       width: 200,
       height: 200,
-      margin: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+      margin: const EdgeInsets.fromLTRB(0, 40, 0, 0), // 指定margin (和外面元素的距離)
       decoration: const BoxDecoration(
         color: Colors.yellow,
       ),
@@ -125,7 +127,7 @@ class MyPicture extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.fromLTRB(0, 40, 0, 0), // 指定margin (和外面元素的距離)
         width: 150,
-        height: 300,
+        height: 150,
         decoration: const BoxDecoration(
           color: Colors.yellow
         ), 
@@ -143,3 +145,23 @@ class MyPicture extends StatelessWidget {
   }
 }
 
+// 實現一個圓形圖片
+class Circular extends StatelessWidget {
+  const Circular({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 150,
+      width: 150,
+      decoration: BoxDecoration(
+        color: Colors.yellow,
+        borderRadius: BorderRadius.circular(75), // 圓形邊框
+        image: const DecorationImage(
+          image: NetworkImage("https://www.itying.com/themes/itying/images/ionic4.png"),
+          fit: BoxFit.cover
+        ),
+      ),
+    );
+  }
+}
