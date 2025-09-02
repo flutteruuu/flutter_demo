@@ -13,7 +13,9 @@ void main(){
           SizedBox(height: 20,), // 添加間距
           Circular(),
           SizedBox(height: 20,), // 添加間距
-          ClipImage()
+          ClipImage(),
+          SizedBox(height: 20,), // 添加間距
+          LocalImage(),
         ],
       )
       ),
@@ -185,7 +187,22 @@ class ClipImage extends StatelessWidget {
   }
 }
 
+// 加載本地圖片
+class LocalImage extends StatelessWidget {
+  const LocalImage({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+      width: 150,
+      height: 150,
+      decoration: const BoxDecoration(
+        color: Colors.yellow,
+      ),
+      child: Image.asset("images/family.png", fit: BoxFit.cover,),
+    );
+  }
+}
 
 
 
