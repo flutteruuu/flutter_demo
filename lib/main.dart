@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './res/listData.dart';
 
 
 void main() {
@@ -16,24 +17,27 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Flutter ICON")),
-        body: const MyHomePage(),
+        body: MyHomePage(),
       ),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  MyHomePage({super.key}){
+      print(listData);
+  }
 
-  // 自定義方法
-  List<Widget> _initListData(){  // 有"_"代表私有方法
-    List<Widget> list = [];
-    for (int i=0; i<20 ; i++){
-      list.add(ListTile(
-        title: Text("我是一個列表---${i+1}"),
+  List<Widget> _initListData(){
+    List<Widget> tempList = [];
+    for (var i=0; i<listData.length ; i++){
+      tempList.add(ListTile(
+        leading: Image.network("${listData[i]["imgurl"]}"),
+        title: Text("${listData[i]["title"]}"),
+        subtitle: Text("${listData[i]["author"]}"),
       ));
     }
-    return list;
+    return tempList;
   }
 
   @override
