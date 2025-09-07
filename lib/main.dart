@@ -25,10 +25,22 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
+  // 自定義方法
+  List<Widget> _initListData(){  // 有"_"代表私有方法
+    List<Widget> list = [];
+    for (int i=0; i<20 ; i++){
+      list.add(ListTile(
+        title: Text("我是一個列表---${i+1}"),
+      ));
+    }
+    return list;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Hello World"),
+    return ListView(
+      children: _initListData(),
+      
     );
   }
 }
