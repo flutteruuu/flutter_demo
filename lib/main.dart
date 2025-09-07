@@ -27,20 +27,34 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const[
-        SizedBox(height: 20),
-        Icon(Icons.home, size: 50, color: Colors.blue),
-        SizedBox(height: 20),
-        Icon(Icons.settings, size: 50, color: Colors.blue),
-        SizedBox(height: 20),
-        Icon(Icons.search, size: 50, color: Colors.blue),
-        SizedBox(height: 20),
-        Icon(Icons.person, size: 50, color: Colors.blue),
-        SizedBox(height: 20),
-        Icon(Icons.category, size: 50, color: Colors.blue),
-        SizedBox(height: 20),
-        Icon(Icons.shop, size: 50, color: Colors.blue),
+    return ListView(
+      children: <Widget>[
+        ListTile(title: Text("我是一個列表")), // 列表項目
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
+        ListTile(title: Text("我是一個列表")),
+        Divider(), // 分隔線
       ],
     );
   }
