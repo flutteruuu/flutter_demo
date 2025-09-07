@@ -28,16 +28,29 @@ class MyHomePage extends StatelessWidget {
       print(listData);
   }
 
-  List<Widget> _initListData(){
-    List<Widget> tempList = [];
-    for (var i=0; i<listData.length ; i++){
-      tempList.add(ListTile(
-        leading: Image.network("${listData[i]["imgurl"]}"),
-        title: Text("${listData[i]["title"]}"),
-        subtitle: Text("${listData[i]["author"]}"),
-      ));
-    }
-    return tempList;
+  // Method1 : For Loop
+  // List<Widget> _initListData(){
+  //   List<Widget> tempList = [];
+  //   for (var i=0; i<listData.length ; i++){
+  //     tempList.add(ListTile(
+  //       leading: Image.network("${listData[i]["imgurl"]}"),
+  //       title: Text("${listData[i]["title"]}"),
+  //       subtitle: Text("${listData[i]["author"]}"),
+  //     ));
+  //   }
+  //   return tempList;
+  // }
+
+  // Method2 : Map (map可以歷遍和修改數據)
+  List <Widget> _initListData(){
+    var tempList = listData.map((value){
+      return ListTile(
+        leading: Image.network("${value["imgurl"]}"),
+        title: Text("${value["title"]}"),
+        subtitle: Text("${value["author"]}"),
+      );
+    });
+    return tempList.toList();
   }
 
   @override
