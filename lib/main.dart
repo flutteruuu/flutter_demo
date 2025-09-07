@@ -29,6 +29,15 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      itemCount: listData.length,
+      itemBuilder: (context, i){
+        return ListTile(
+          leading: Image.network("${listData[i]["imgurl"]}"),
+          title: Text(listData[i]["title"]),
+          subtitle: Text(listData[i]["author"]),
+        );
+      },
+    );
   }
 }
