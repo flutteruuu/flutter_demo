@@ -28,31 +28,34 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   List<Widget> _initGridViewData(){
-    List<Widget> tempList = [];
-    for (var i = 0; i<12; i++){
-      tempList.add(
-        Container(
-          alignment: Alignment.center,
-          decoration:  BoxDecoration(
-            color: Colors.blue
-          ),
-          child: Text("第${i}元素", style: const TextStyle(
-            fontSize: 20,
-          ))
+    var tempList = listData.map((value){
+      return Container(
+        alignment: Alignment.center,
+        decoration:  BoxDecoration(
+          border: Border.all(color: Colors.grey)
+        ),
+        child: Column(
+          children: [
+            Image.network(value["imgurl"]),
+            const SizedBox(height: 10),
+            Text(value["title"], style: const TextStyle(
+              fontSize: 16,
+            ))
+          ],
         )
       );
-    }
-    return tempList;
+    });
+    return tempList.toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    return GridView.extent(
+    return GridView.count(
       padding: const EdgeInsets.all(10),
-      maxCrossAxisExtent: 120, // 每個子項目的最大寬度
+      crossAxisCount: 2, // 每行三個
       crossAxisSpacing: 10, // 水平間距
       mainAxisSpacing: 10,  // 垂直間距
-      childAspectRatio: 1.2, // 寬高比
+      childAspectRatio: 0.8, // 寬高比
       children: _initGridViewData(),
     );
   }
