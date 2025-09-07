@@ -24,8 +24,12 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  List<String> list=[];
   MyHomePage({super.key}){
-      print(listData);
+    for (var i = 0; i < 20 ; i++){
+      list.add("我是第${i}條數據");
+    }
+
   }
 
   // Method1 : For Loop
@@ -42,22 +46,26 @@ class MyHomePage extends StatelessWidget {
   // }
 
   // Method2 : Map (map可以歷遍和修改數據)
-  List <Widget> _initListData(){
-    var tempList = listData.map((value){
-      return ListTile(
-        leading: Image.network("${value["imgurl"]}"),
-        title: Text("${value["title"]}"),
-        subtitle: Text("${value["author"]}"),
-      );
-    });
-    return tempList.toList();
-  }
+  // List <Widget> _initListData(){
+  //   var tempList = listData.map((value){
+  //     return ListTile(
+  //       leading: Image.network("${value["imgurl"]}"),
+  //       title: Text("${value["title"]}"),
+  //       subtitle: Text("${value["author"]}"),
+  //     );
+  //   });
+  //   return tempList.toList();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: _initListData(),
-      
-    );
+    return ListView.builder(
+      itemCount: list.length,
+      itemBuilder: (context, index){
+        return ListTile(
+          title: Text(list[index]),
+        );
+      }
+      );
   }
 }
