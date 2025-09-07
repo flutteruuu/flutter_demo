@@ -8,36 +8,29 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: "Flutter DEMO",
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("Flutter ICON")),
-        body: const MyHomePage(),
+        appBar: AppBar(title: const Text("Flutter App")),
+        body: const HomePage(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
 
-  const MyHomePage({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: listData.length,
-      itemBuilder: (context, i){
-        return ListTile(
-          leading: Image.network("${listData[i]["imgurl"]}"),
-          title: Text(listData[i]["title"]),
-          subtitle: Text(listData[i]["author"]),
-        );
-      },
+    return Center(
+      child: Text("Hello Flutter"),
     );
   }
 }
