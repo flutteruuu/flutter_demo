@@ -27,22 +27,33 @@ class HomePage extends StatelessWidget {
 
   const HomePage({super.key});
 
+  List<Widget> _initGridViewData(){
+    List<Widget> tempList = [];
+    for (var i = 0; i<12; i++){
+      tempList.add(
+        Container(
+          alignment: Alignment.center,
+          decoration:  BoxDecoration(
+            color: Colors.blue
+          ),
+          child: Text("第${i}元素", style: const TextStyle(
+            fontSize: 20,
+          ))
+        )
+      );
+    }
+    return tempList;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GridView.extent(
-      maxCrossAxisExtent: 100, // 每個圖標的最大寬度
-      children: const[
-        Icon(Icons.pedal_bike),
-        Icon(Icons.home),
-        Icon(Icons.ac_unit),
-        Icon(Icons.search),
-        Icon(Icons.settings),
-        Icon(Icons.airport_shuttle),
-        Icon(Icons.all_inclusive),
-        Icon(Icons.beach_access),
-        Icon(Icons.cake),
-        Icon(Icons.favorite),
-      ],
+    return GridView.count(
+      padding: const EdgeInsets.all(10),
+      crossAxisSpacing: 10, // 水平間距
+      mainAxisSpacing: 10,  // 垂直間距
+      crossAxisCount: 3, // 每行三個
+      childAspectRatio: 1.2, // 寬高比
+      children: _initGridViewData(),
     );
   }
 }
