@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3, // 每行三個
+    return GridView.extent(
+      maxCrossAxisExtent: 100, // 每個圖標的最大寬度
       children: const[
         Icon(Icons.pedal_bike),
         Icon(Icons.home),
