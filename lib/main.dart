@@ -47,11 +47,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
+    return GridView.extent(
       padding: const EdgeInsets.all(10),
+      maxCrossAxisExtent: 120, // 每個子項目的最大寬度
       crossAxisSpacing: 10, // 水平間距
       mainAxisSpacing: 10,  // 垂直間距
-      crossAxisCount: 3, // 每行三個
       childAspectRatio: 1.2, // 寬高比
       children: _initGridViewData(),
     );
