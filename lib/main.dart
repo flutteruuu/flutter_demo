@@ -17,55 +17,18 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(title: const Text("Flutter ICON")),
-        body: MyHomePage(),
+        body: const MyHomePage(),
       ),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  List<String> list=[];
-  MyHomePage({super.key}){
-    for (var i = 0; i < 20 ; i++){
-      list.add("我是第${i}條數據");
-    }
 
-  }
-
-  // Method1 : For Loop
-  // List<Widget> _initListData(){
-  //   List<Widget> tempList = [];
-  //   for (var i=0; i<listData.length ; i++){
-  //     tempList.add(ListTile(
-  //       leading: Image.network("${listData[i]["imgurl"]}"),
-  //       title: Text("${listData[i]["title"]}"),
-  //       subtitle: Text("${listData[i]["author"]}"),
-  //     ));
-  //   }
-  //   return tempList;
-  // }
-
-  // Method2 : Map (map可以歷遍和修改數據)
-  // List <Widget> _initListData(){
-  //   var tempList = listData.map((value){
-  //     return ListTile(
-  //       leading: Image.network("${value["imgurl"]}"),
-  //       title: Text("${value["title"]}"),
-  //       subtitle: Text("${value["author"]}"),
-  //     );
-  //   });
-  //   return tempList.toList();
-  // }
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: list.length,
-      itemBuilder: (context, index){
-        return ListTile(
-          title: Text(list[index]),
-        );
-      }
-      );
+    return Container();
   }
 }
