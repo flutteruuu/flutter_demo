@@ -29,8 +29,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Hello Flutter"),
+    return GridView.count(
+      crossAxisCount: 3, // 每行三個
+      children: const[
+        Icon(Icons.pedal_bike),
+        Icon(Icons.home),
+        Icon(Icons.ac_unit),
+        Icon(Icons.search),
+        Icon(Icons.settings),
+        Icon(Icons.airport_shuttle),
+        Icon(Icons.all_inclusive),
+        Icon(Icons.beach_access),
+        Icon(Icons.cake),
+        Icon(Icons.favorite),
+      ],
     );
   }
 }
