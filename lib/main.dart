@@ -29,21 +29,20 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: Colors.black12,
-      child: Column( // 外部沒有Container 行是自適應的
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.end,
-
+    return Flex( // 外部沒有Container 行是自適應的
+        direction: Axis.horizontal,
         children: [
-          IconContainer(Icons.home),
-          IconContainer(Icons.search, color: Colors.yellow),
-          IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
+          Expanded(
+            flex: 1,
+            child: IconContainer(Icons.home), // 這個元素設置寬度是沒有效果的
+            ),
+          Expanded(
+            flex: 2,
+            child: IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
+            ),
+          // IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
         ],
-      ),
-    );
+      );
   }
 }
 
