@@ -29,8 +29,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      "Hello Flutter"
+    return const Padding(  //内邊距組件
+      padding: EdgeInsets.all(20),   
+      child: Text("Hello Flutter"),
     );
   }
 }
+
