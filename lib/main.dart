@@ -33,23 +33,20 @@ class HomePage extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       color: Colors.black12,
-      child: Row( // 外部沒有Container 行是自適應的
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column( // 外部沒有Container 行是自適應的
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
 
         children: [
           IconContainer(Icons.home),
           IconContainer(Icons.search, color: Colors.yellow),
           IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
-          
-
         ],
       ),
     );
-    
-    
   }
 }
+
 
 // 自訂義IconContainer
 class IconContainer extends StatelessWidget {
