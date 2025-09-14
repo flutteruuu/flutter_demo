@@ -29,10 +29,42 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(  //内邊距組件
-      padding: EdgeInsets.all(20),   
-      child: Text("Hello Flutter"),
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: Colors.black12,
+      child: Row( // 外部沒有Container 行是自適應的
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+
+        children: [
+          IconContainer(Icons.home),
+          IconContainer(Icons.search, color: Colors.yellow),
+          IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
+          
+
+        ],
+      ),
     );
+    
+    
   }
 }
 
+// 自訂義IconContainer
+class IconContainer extends StatelessWidget {
+  Color color;
+  IconData icon;
+  IconContainer(this.icon,{super.key, this.color=Colors.red});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      height: 100,
+      width: 100,
+      color: color,
+      child: Icon(icon, color: Colors.white, size: 28),
+    );
+  }
+}
