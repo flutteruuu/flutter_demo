@@ -29,38 +29,43 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flex( // 外部沒有Container 行是自適應的
-        direction: Axis.horizontal,
-        children: [
-          Expanded(
-            flex: 1,
-            child: IconContainer(Icons.home), // 這個元素設置寬度是沒有效果的
-            ),
-          Expanded(
-            flex: 2,
-            child: IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
-            ),
-          // IconContainer(Icons.ac_unit_sharp, color: Colors.orange),
-        ],
-      );
-  }
-}
-
-
-// 自訂義IconContainer
-class IconContainer extends StatelessWidget {
-  Color color;
-  IconData icon;
-  IconContainer(this.icon,{super.key, this.color=Colors.red});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      height: 100,
-      width: 100,
-      color: color,
-      child: Icon(icon, color: Colors.white, size: 28),
+    return ListView(
+      children: [
+        Container(
+          width: double.infinity,
+          height: 200,
+          color:Colors.black,
+        ),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: SizedBox(
+                height: 180,
+                child: Image.network("https://www.itying.com/images/flutter/2.png",fit: BoxFit.cover)
+              ),
+              ),
+            Expanded(
+                flex: 1,
+                child:SizedBox(
+                  height: 180,
+                  child: Column(
+                  children:[
+                    Expanded(flex: 1,child: SizedBox( 
+                      width: double.infinity,
+                      child: Image.network("https://www.itying.com/images/flutter/3.png",fit: BoxFit.cover),
+                    )),
+                    const SizedBox(height: 5),
+                    Expanded(flex: 2, child: SizedBox(
+                      width: double.infinity,
+                      child: Image.network("https://www.itying.com/images/flutter/4.png",fit: BoxFit.cover),
+                    )),
+                  ],
+                )
+                ))
+          ],
+        )
+      ],
     );
   }
 }
