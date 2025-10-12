@@ -29,22 +29,27 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          width: 300,
-          height: 400,
-          color: Colors.red,
-        ),
-        Container(
-          width: 200,
-          height: 200,
-          color: Colors.yellow,
-        ),
-        const Text("你好 Flutter"),
-        const Text("11111111"),
-      ],
+    return Container(
+      height: 400,
+      width: 300,
+      color: Colors.red,
+      child: Stack( // Note: 相對於外部容器進行定位 如果沒有外部容器，則相對於整個螢幕定位
+        children:[
+          Positioned(
+            left: 10,
+            bottom: 10,
+            child: Container(
+              height: 100,
+              width: 100,
+              color: Colors.yellow,
+          )),
+          const Positioned(
+            right: 0,
+            bottom: 190,
+            child: Text("你好 Flutter"),
+          ),
+        ],
+      ),
       );
     }
 }
