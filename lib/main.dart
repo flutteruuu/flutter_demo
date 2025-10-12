@@ -29,6 +29,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Hello Flutter");
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          width: 300,
+          height: 400,
+          color: Colors.red,
+        ),
+        Container(
+          width: 200,
+          height: 200,
+          color: Colors.yellow,
+        ),
+        const Text("你好 Flutter"),
+        const Text("11111111"),
+      ],
+      );
     }
 }
