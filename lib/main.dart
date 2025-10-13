@@ -29,13 +29,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    // 算法: (Alignment.x*childWidth/2 + childWidth/2 , Alignment.y*childHeight/2 + childHeight/2)
     return Container(
       width: 200,
       height: 200,
       color: Colors.red,
       child: const Align(
-        alignment: Alignment.center,
+        alignment: Alignment(1,1),
         child: Text("Hello Flutter"),),
     );
   }
