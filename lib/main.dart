@@ -29,27 +29,31 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 400,
-      width: 300,
-      color: Colors.red,
-      child: Stack( // Note: 相對於外部容器進行定位 如果沒有外部容器，則相對於整個螢幕定位
-        children:[
-          Positioned(
-            left: 10,
-            bottom: 10,
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.yellow,
-          )),
-          const Positioned(
-            right: 0,
-            bottom: 190,
-            child: Text("你好 Flutter"),
-          ),
-        ],
-      ),
-      );
+    // 獲取螢幕寬度和高度
+    final size = MediaQuery.of(context).size;
+
+    return Stack(
+      children:[
+        ListView(
+          padding: const EdgeInsets.only(top: 50),
+          children: [
+            for (var i = 0; i < 30; i++)
+              ListTile(title: Text("我是一個列表$i")),
+          ],
+        ),
+        Positioned(
+          left: 0,
+          top: 0,
+          width: size.width, // 配置子元素的寬度和高度 不能使用double.infinity
+          height: 44,        // 配置子元素的寬度和高度
+          child: Container(
+            alignment: Alignment.center,
+            height: 44,
+            color: Colors.black,
+            child: const Text("二級導航", style: TextStyle(color: Colors.white),),
+              ))
+        
+      ],
+    );
     }
 }
