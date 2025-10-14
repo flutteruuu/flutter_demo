@@ -29,7 +29,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    return const Text("Hello Flutter");
+    // 需求: 頁面上顯示一個容器, 寬度是螢幕寬度, 高度是寬度的一半
+    return AspectRatio(
+      aspectRatio: 2/1,
+      child: Container(
+        color: Colors.red,
+      ),
+    );
   }
 }
