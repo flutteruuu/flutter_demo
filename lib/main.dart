@@ -30,42 +30,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return Column(
-      children: [
-        SizedBox(
-          height: 40,
-          width: double.infinity,
-          child: Stack(
-            children: const[
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text("收藏"),
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: Text("購買"),
-              )
-            ]
-          ),
-        ),
-        SizedBox(
-          height: 40,
-          width: double.infinity,
-          child: Stack(
-            children: const[
-              Positioned(
-                left: 10,
-                child: Text("收藏"),
-              ),
-              Positioned(
-                right: 10,
-                child: Text("購買"),
-              )
-            ]
-          ),
-        ),
-        
-      ],
-    );
+    return const Text("Hello Flutter");
   }
 }
