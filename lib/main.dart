@@ -29,38 +29,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // 需求: 頁面上顯示一個容器, 寬度是螢幕寬度, 高度是寬度的一半
-    return ListView(
-      children: listData.map((value){
-      return Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10)
-          ),
-          elevation: 20,
-          margin: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              AspectRatio(
-                aspectRatio: 16/9, 
-                child: Image.network(value["imgurl"], fit: BoxFit.cover,)
-              ),
-              ListTile(
-                leading: ClipOval(
-                  child: Image.network(
-                    value["imgurl"],
-                    width: 40,
-                    height: 40,
-                    fit: BoxFit.cover,
-                  )
-                ),
-                title: Text(value["title"]),
-                subtitle: Text(value["author"]),
-
-              ),
-            ],
-          ),
-        );
-      }).toList(),
-    );
+    return const Text("按鈕組件");  
+    
   }
 }
