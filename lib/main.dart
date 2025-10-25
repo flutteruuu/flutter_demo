@@ -29,7 +29,30 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("按鈕組件");  
+    return ListView(
+      children:[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children:[
+            ElevatedButton(
+              onPressed: () {}, // 點擊按鈕會觸發的事件
+              child: const Text("普通按鈕")
+            ),
+            TextButton(
+              onPressed: () {}, 
+              child: const Text("文字按鈕")
+            ),
+            OutlinedButton(
+              onPressed: null, 
+              child: Text("邊框按鈕")
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.thumb_up),
+            ),
+          ]
+        ),
+      ],
+    );
     
-  }
-}
+  }}
