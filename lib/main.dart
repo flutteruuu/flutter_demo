@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import './res/listData.dart';
 
-
 void main() {
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,9 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Flutter DEMO",
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
+      theme: ThemeData(primarySwatch: Colors.teal),
       home: Scaffold(
         appBar: AppBar(title: const Text("Flutter App")),
         body: const HomePage(),
@@ -24,56 +21,63 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children:[
+      children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children:[
+          children: [
             ElevatedButton(
               onPressed: () {}, // 點擊按鈕會觸發的事件
-              child: const Text("普通按鈕")
+              child: const Text("普通按鈕"),
             ),
-            TextButton(
-              onPressed: () {}, 
-              child: const Text("文字按鈕")
-            ),
-            OutlinedButton(
-              onPressed: null, 
-              child: Text("邊框按鈕")
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.thumb_up),
-            ),
-          ]
+            TextButton(onPressed: () {}, child: const Text("文字按鈕")),
+            OutlinedButton(onPressed: null, child: Text("邊框按鈕")),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_up)),
+          ],
         ),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children:[
+          children: [
             ElevatedButton.icon(
-              onPressed: () {}, 
+              onPressed: () {},
               icon: const Icon(Icons.send),
-              label: const Text("發送")
+              label: const Text("發送"),
             ),
             TextButton.icon(
-              onPressed: () {}, 
+              onPressed: () {},
               icon: const Icon(Icons.info),
               label: const Text("消息"),
             ),
             OutlinedButton.icon(
-              onPressed: () {}, 
+              onPressed: () {},
               icon: const Icon(Icons.add),
               label: const Text("增加"),
             ),
-          ]
+          ],
+        ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton.icon(
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(Colors.red), // 設置背景顏色
+                foregroundColor: WidgetStateProperty.all( Colors.black ), // 設置文字顏色
+              ),
+              onPressed: () {
+                print("ElevatedButton");
+              },
+              icon: const Icon(Icons.send),
+              label: const Text("發送"),
+            ),
+          ],
         ),
       ],
     );
-    
-  }}
+  }
+}
