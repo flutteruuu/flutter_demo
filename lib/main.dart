@@ -125,22 +125,24 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               style: ButtonStyle(
-                shape: WidgetStateProperty.all( // 圓角
+                shape: WidgetStateProperty.all(
+                  // 圓角
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)
-                  )
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
-              onPressed: () {}, 
+              onPressed: () {},
               child: const Text("圓角"),
             ),
             ElevatedButton(
               style: ButtonStyle(
-                shape: WidgetStateProperty.all( // 圓形
-                  const CircleBorder(side: BorderSide(color: Colors.yellow))
+                shape: WidgetStateProperty.all(
+                  // 圓形
+                  const CircleBorder(side: BorderSide(color: Colors.yellow)),
                 ),
               ),
-              onPressed: () {}, 
+              onPressed: () {},
               child: const Text("圓形"),
             ),
             SizedBox(
@@ -148,15 +150,35 @@ class HomePage extends StatelessWidget {
               width: 80,
               child: ElevatedButton(
                 style: ButtonStyle(
-                  shape: WidgetStateProperty.all( // 圓形
-                    const CircleBorder(side: BorderSide(width: 10, color: Colors.yellow))
+                  shape: WidgetStateProperty.all(
+                    // 圓形
+                    const CircleBorder(
+                      side: BorderSide(width: 10, color: Colors.yellow),
+                    ),
                   ),
                 ),
-              onPressed: () {}, 
-              child: const Text("圓形"),),
+                onPressed: () {},
+                child: const Text("圓形"),
+              ),
             ),
           ],
         ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+            OutlinedButton(
+              style: ButtonStyle(
+                side: WidgetStateProperty.all(
+                  const BorderSide(width: 1, color: Colors.red)
+                )
+              ),
+              onPressed: () {},
+              child: const Text("帶邊框按鈕"),
+            ),
+          ]
+        ),
+
       ],
     );
   }
