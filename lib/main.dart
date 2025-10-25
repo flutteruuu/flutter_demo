@@ -77,6 +77,29 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: 60,
+              width: 100,
+              child: ElevatedButton(
+                onPressed: () {}, 
+                child: Text("大按鈕"),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 100,
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.search), 
+                label: const Text("搜索"),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
