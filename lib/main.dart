@@ -67,7 +67,9 @@ class HomePage extends StatelessWidget {
             ElevatedButton.icon(
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(Colors.red), // 設置背景顏色
-                foregroundColor: WidgetStateProperty.all( Colors.black ), // 設置文字顏色
+                foregroundColor: WidgetStateProperty.all(
+                  Colors.black,
+                ), // 設置文字顏色
               ),
               onPressed: () {
                 print("ElevatedButton");
@@ -84,18 +86,35 @@ class HomePage extends StatelessWidget {
             Container(
               height: 60,
               width: 100,
-              child: ElevatedButton(
-                onPressed: () {}, 
-                child: Text("大按鈕"),
-              ),
+              child: ElevatedButton(onPressed: () {}, child: Text("大按鈕")),
             ),
             SizedBox(
               height: 60,
               width: 100,
               child: ElevatedButton.icon(
                 onPressed: () {},
-                icon: const Icon(Icons.search), 
+                icon: const Icon(Icons.search),
                 label: const Text("搜索"),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                height: 40,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(Colors.green),
+                    foregroundColor: WidgetStateProperty.all(Colors.white),
+                  ),
+                  child: const Text("login"),
+                ),
               ),
             ),
           ],
