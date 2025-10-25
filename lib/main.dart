@@ -52,6 +52,27 @@ class HomePage extends StatelessWidget {
             ),
           ]
         ),
+        SizedBox(height: 20,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children:[
+            ElevatedButton.icon(
+              onPressed: () {}, 
+              icon: const Icon(Icons.send),
+              label: const Text("發送")
+            ),
+            TextButton.icon(
+              onPressed: () {}, 
+              icon: const Icon(Icons.info),
+              label: const Text("消息"),
+            ),
+            OutlinedButton.icon(
+              onPressed: () {}, 
+              icon: const Icon(Icons.add),
+              label: const Text("增加"),
+            ),
+          ]
+        ),
       ],
     );
     
