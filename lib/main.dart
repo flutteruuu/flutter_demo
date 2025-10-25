@@ -119,6 +119,44 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              style: ButtonStyle(
+                shape: WidgetStateProperty.all( // 圓角
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  )
+                ),
+              ),
+              onPressed: () {}, 
+              child: const Text("圓角"),
+            ),
+            ElevatedButton(
+              style: ButtonStyle(
+                shape: WidgetStateProperty.all( // 圓形
+                  const CircleBorder(side: BorderSide(color: Colors.yellow))
+                ),
+              ),
+              onPressed: () {}, 
+              child: const Text("圓形"),
+            ),
+            SizedBox(
+              height: 80,
+              width: 80,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: WidgetStateProperty.all( // 圓形
+                    const CircleBorder(side: BorderSide(width: 10, color: Colors.yellow))
+                  ),
+                ),
+              onPressed: () {}, 
+              child: const Text("圓形"),),
+            ),
+          ],
+        ),
       ],
     );
   }
