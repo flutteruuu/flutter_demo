@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-// 有狀態組件 : 如果我們想改變頁面中數據的話，這時就需要用到StatefulWidget有狀態組件
+// 有狀態組件:如果我們想改變葉面中的數據的話，這時就需要用到StatefulWidget有狀態組件
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -31,59 +30,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _numCount=0;
   @override
   Widget build(BuildContext context) {
-    print(_numCount);
     return Scaffold(
       appBar: AppBar(title: const Text("Flutter App")),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("$_numCount", style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: 60),
-            ElevatedButton(onPressed: () {
-              setState(() { // 更新狀態
-                _numCount ++ ;
-              });
-            }, child: const Text("增加"))
-          ],
-        ),
+      body: ListView(
+        children: const [
+          ListTile(
+            title: Text("我是一個列表"),
+          ),
+          ListTile(
+            title: Text("我是一個列表"),
+          ),
+          ListTile(
+            title: Text("我是一個列表"),
+          ),
+          ListTile(
+            title: Text("我是一個列表"),
+          ),
+        ],
       ),
-      floatingActionButton:  FloatingActionButton(
-        onPressed: (){
-          setState(() {
-            _numCount ++;
-          });
-        },
-        child: Icon(Icons.add)
-      ),
-
     );
   }
 }
-
-// class HomePage extends StatelessWidget {
-//   int countNum = 0;
-//   HomePage({super.key});
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: const Text("Flutter App")),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             Text("$countNum", style: Theme.of(context).textTheme.headlineMedium),
-//             SizedBox(height: 100),
-//             ElevatedButton(onPressed: () {
-//               countNum++;
-//               print("按了$countNum 次");
-//             }, child: const Text("增加"))
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
