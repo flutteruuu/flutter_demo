@@ -10,6 +10,8 @@ void main() {
   //B = 456; // 錯誤: final 變量只能賦值一次
   //print(B);
 
+
+  // 使用 final 定義一個列表，因為.add() 是修改列表內容，而不是重新賦值，所以是允許的
   final List l = [];
 
   l.add(12);
